@@ -8,10 +8,10 @@
         <link rel="stylesheet" href="css/estilo.css">
         <script src="js/jquery.js"></script>
         <script src="bootstrap/js/bootstrap.js"></script>
-        <!--script src="js/funcoes.js"></script-->
+        <script src="js/funcoes.js"></script>
         <title>Sistema de Agendamento - Clientes</title>
     </head>
-    <body>
+    <body> 
       <div class="container">
         <div class="row">
           <nav class="navbar navbar-expand-lg navbar-dark bg-primary col-12">
@@ -22,10 +22,10 @@
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
               <ul class="navbar-nav">
                 <li class="nav-item active">
-                  <a class="nav-link" href="index.html">Cadastrar<span class="sr-only">(current)</span></a>
+                  <a class="nav-link" href="index.php">Cadastrar<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="consultarClientes.html">Consultar</a>
+                  <a class="nav-link" href="consultarClientes.php">Consultar</a>
                 </li>
               </ul>
             </div>
@@ -37,19 +37,19 @@
               <h5 class="card-title">Cadastrar - Agendamento de Potenciais Clientes</h5>
               <p class="card-text">Sistema utilizado para agendamento de serviços.</p>
               <p>
-                <form method="POST" action="controller/ControllerCadastro.php" id="form" name="form"></form>
+              <form method="post" action="controller/ControllerCadastro.php?funcao=cadastro" id="form" name="form">
                 <form>
                   <div class="form-group">
                     <label for="exampleFormControlInput1">Nome:</label>
-                    <input type="text" class="form-control" name="Nome" required id="txtNome">
+                    <input type="text" class="form-control" name="txtNome" required id="txtNome">
                   </div>
                   <div class="form-group">
                     <label for="exampleFormControlInput1">Telefone:</label>
-                    <input type="tel" class="form-control" required id="txtTelefone" placeholder="(xx)xxxxx-xxxx">
+                    <input type="tel" class="form-control" required name="txtTelefone" id="txtTelefone" placeholder="(xx)xxxxx-xxxx">
                   </div>
                   <div class="form-group">
                     <label for="exampleFormControlSelect1">Origem:</label>
-                    <select class="form-control" required id="txtOrigem">
+                    <select class="form-control" required name="txtOrigem" id="txtOrigem">
                       <option>Celular</option>
                       <option>Fixo</option>
                       <option>Whatsapp</option>
@@ -60,11 +60,11 @@
                   </div>
                   <div class="form-group">
                     <label for="exampleFormControlInput1">Data do Contato:</label>
-                    <input type="date" class="form-control" required id="txtDataContato">
+                    <input type="date" class="form-control" required name="txtDataContato" id="txtDataContato">
                   </div>
                   <div class="form-group">
                     <label for="exampleFormControlTextarea1">Observação</label>
-                    <textarea class="form-control" id="txtObservacao" rows="3"></textarea>
+                    <textarea class="form-control" name="txtObservacao" id="txtObservacao" rows="3"></textarea>
                   </div>
                   <button type="submit" id="btnInserir" class="btn btn-primary">Cadastrar</button>
                 </form>

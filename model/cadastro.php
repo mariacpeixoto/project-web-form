@@ -1,13 +1,15 @@
 <?php
 require_once("banco.php");
 
-class Cadastro extends Banco{
+class Cadastro extends Banco {
+
     private $nome;
     private $telefone;
     private $origem;
     private $data_contato;
     private $observacao;
 
+    //Metodos Set
     public function setNome($string){
         $this->nome = $string;
     }
@@ -24,6 +26,7 @@ class Cadastro extends Banco{
         $this->observacao = $string;
     }
 
+    //Metodos Get
     public function getNome(){
         return $this->nome;
     }
@@ -42,6 +45,10 @@ class Cadastro extends Banco{
 
     public function incluir(){
         return $this->setAgendamentos($this->getNome(),$this->getTelefone(),$this->getOrigem(),$this->getData_contato(),$this->getObservacao());
+    }
+
+    public function listar(){
+    	return $this->getAgendamentos();
     }
 }
 ?>
