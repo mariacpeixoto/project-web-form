@@ -38,7 +38,6 @@
               <p class="card-text">Sistema utilizado para agendamento de serviços.</p>
               <p>
               <form method="post" action="controller/ControllerCadastro.php?funcao=cadastro" id="form" name="form">
-                <form>
                   <div class="form-group">
                     <label for="exampleFormControlInput1">Nome:</label>
                     <input type="text" class="form-control" name="txtNome" required id="txtNome">

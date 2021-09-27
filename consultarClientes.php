@@ -51,7 +51,7 @@ require_once("controller/ControllerCadastro.php");
 						<tbody id="TableData">
 						<?php
 							$controller = new ControllerCadastro();
-							$resultado = $controller->listar();
+							$resultado = $controller->listar(0);
 							//print_r($resultado);
 							for($i=0;$i<count($resultado);$i++){ 
 						?>
@@ -62,7 +62,7 @@ require_once("controller/ControllerCadastro.php");
 									<td scope="col"><?php echo $resultado[$i]['data_contato']; ?></td>
 									<td scope="col"><?php echo $resultado[$i]['observacao']; ?></td>
 									<td scope="col">
-										<button type="button" class="btn btn-outline-primary" style="width: 72px;">Editar</button>
+										<button type="button" class="btn btn-outline-primary" onclick="location.href='editarClientes.php?id=<?php echo $resultado[$i]['id']; ?>'" style="width: 72px;">Editar</button>
 										<button type="button" class="btn btn-outline-primary" style="width: 72px;">Excluir</button>
 									</td>
 								</tr>
