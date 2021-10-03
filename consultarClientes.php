@@ -11,6 +11,16 @@ require_once("controller/ControllerCadastro.php");
 	<script src="js/jquery.js"></script>
 	<script src="bootstrap/js/bootstrap.js"></script>
 	<!--<script src="js/funcoes.js"></script>-->
+	<script>
+		function confirmDelete(delUrl) {
+  			if (confirm("Deseja apagar o registro?")) {
+   				document.location = delUrl;
+   				//var url_string = "http://localhost/project-web/" + delUrl;
+				//var url = new URL(url_string);
+				//var data = url.searchParams.get("id"); //pega o value
+	        }  
+		}
+	</script>
 	<title>SISTEMA DE AGENDAMENTO - CLIENTES</title>
 </head> 
 <body> 
@@ -63,7 +73,7 @@ require_once("controller/ControllerCadastro.php");
 									<td scope="col"><?php echo $resultado[$i]['observacao']; ?></td>
 									<td scope="col">
 										<button type="button" class="btn btn-outline-primary" onclick="location.href='editarClientes.php?id=<?php echo $resultado[$i]['id']; ?>'" style="width: 72px;">Editar</button>
-										<button type="button" class="btn btn-outline-primary" style="width: 72px;">Excluir</button>
+										<button type="button" class="btn btn-outline-primary" onclick="javascript:confirmDelete('excluirClientes.php?id=<?php echo $resultado[$i]['id']; ?>')" style="width: 72px;">Excluir</button>
 									</td>
 								</tr>
 						<?php
